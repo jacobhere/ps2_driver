@@ -1,28 +1,81 @@
-/*
- * Copyright (c) 2020 Pete Johanson
- *
- * SPDX-License-Identifier: MIT
- */
+#include <dt-bindings/zmk/matrix_transform.h> // Put this with the other includes at the top of your overlay
 
-#include "corne_tp.dtsi"
+/ {
+    chosen {
+        zmk,kscan = &default_kscan;
+        zmk,matrix_transform = &default_transform;
+    };
+    
+    default_kscan: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "default_kscan";
+        diode-direction = "row2col";
+        wakeup-source;
 
-&default_transform {
-    col-offset = <6>;
+        col-gpios
+            = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV0 - P0.05
+            , <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV1 - P0.30
+            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV2 - P0.29
+            , <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV3 - P1.00
+            , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV4 - P0.20
+            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV5 - P0.17
+            , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV6 - P0.22
+            , <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV7 - P0.02
+            , <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV8 - P0.15
+            , <&gpio1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV9 - P1.09
+            , <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV10 - P0.31
+            , <&gpio0 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV11 - P0.01
+            , <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV12 - P0.08
+            , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV13 - P0.26
+            , <&gpio0 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV14 - P0.00
+            , <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV15 - P0.06
+            ;
+
+        row-gpios
+            = <&gpio1 4 GPIO_ACTIVE_HIGH>   // SENSE0 - P1.04
+            , <&gpio0 4 GPIO_ACTIVE_HIGH>   // SENSE1 - P0.04
+            , <&gpio0 7 GPIO_ACTIVE_HIGH>   // SENSE2 - P0.07
+            , <&gpio1 2 GPIO_ACTIVE_HIGH>   // SENSE3 - P1.02
+            , <&gpio0 12 GPIO_ACTIVE_HIGH>  // SENSE4 - P0.12
+            , <&gpio1 6 GPIO_ACTIVE_HIGH>   // SENSE5 - P1.06
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>  // SENSE6 - P1.13
+            , <&gpio0 28 GPIO_ACTIVE_HIGH>  // SENSE7 - P0.28
+            ;
+    };
+
+    default_transform: keymap_transform0 {
+        compatible = "zmk,matrix-transform";
+        columns = <16>; // Length of the "col-gpios" array (DRV0-DRV15)
+        rows = <8>; // Length of the "row-gpios" array (SENSE0-SENSE7)
+        map = <
+        // Row 0: Back-Tick, F1, F2, 5, 6, Equal, F8, Minus, F9, Insert, Delete, Page-Up, Home, , , Ctrl-L
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11) RC(0,12)                  RC(0,15)
+        // Row 1: 1, 2, 3, 4, 7, 8, 9, 0, F10, F12, F11, Page-Down, End, Print-Screen, , 
+            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11) RC(1,12) RC(1,13)
+        // Row 2: Q, W, E, R, U, I, O, P, , , VolumeUp, GUI, , ScrollLock, , 
+            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6) RC(2,7)          RC(2,10) RC(2,11)    RC(2,13)
+        // Row 3: Tab, CapsLock, F3, T, Y, Right-Brace, F7, Left-Brace, Back-Space, , VolumeDown, , , , Shift-L, 
+            RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8)    RC(3,10)              RC(3,14)
+        // Row 4: A, S, D, F, J, K, L, Semi-colon, Back-Slash, Fn, Mute, Menu, , , , 
+            RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(4,6) RC(4,7) RC(4,8) RC(4,9) RC(4,10) RC(4,11)
+        // Row 5: Esc, , F4, G, H, F6, , Quote, F5, , Think-Vantage, , Arrow-Up, Alt-L, , 
+            RC(5,0)    RC(5,2) RC(5,3) RC(5,4) RC(5,5)    RC(5,7) RC(5,8)    RC(5,10)    RC(5,12) RC(5,13)
+        // Row 6: Z, X, C, V, M, Comma, Period, Forward-Slash, Enter, , , PageLeft, Pause, , Shift-R, Ctrl-R
+            RC(6,0) RC(6,1) RC(6,2) RC(6,3) RC(6,4) RC(6,5) RC(6,6) RC(6,7) RC(6,8)       RC(6,11) RC(6,12)    RC(6,14) RC(6,15)
+        // Row 7: , , , B, N, , , Forward-Slash, Space, Arrow-Right, ArrowDown, Page-Right, Arrow-Left, Alt-R, , 
+                     RC(7,3) RC(7,4)       RC(7,7) RC(7,8) RC(7,9) RC(7,10) RC(7,11) RC(7,12) RC(7,13)
+        >;
+    };
 };
 
-&five_column_transform {
-    col-offset = <6>;
-};
-
-&kscan0 {
-    col-gpios
-        = <&pro_micro 14 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 20 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 21 GPIO_ACTIVE_HIGH>
-        ;
+/* Force P0.09 high at boot to power the PS/2 device */
+&gpio0 {
+    ps2_vdd: ps2_vdd_hog {
+        gpio-hog;
+        gpios = <9 GPIO_ACTIVE_HIGH>;  /* Port 0, Pin 9 = P0.09 */
+        output-high;                   /* drive high immediately at boot */
+        /* no 'label' here */
+    };
 };
 
 
