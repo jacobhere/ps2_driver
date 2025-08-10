@@ -117,4 +117,4 @@ The image was generated using [caksoylar's awesome keymap-drawer](https://github
 - [My personal, more advanced zmk-config](https://github.com/infused-kim/zmk-config)
 - [PS/2 Mouse & TrackPoint driver module for zmk](https://github.com/infused-kim/kb_zmk_ps2_mouse_trackpoint_driver)
 - [Zmk PR #2027: Mouse pointer movement/scrolling](https://github.com/zmkfirmware/zmk/pull/2027)
-- [Zmk PR #1751: Add PS/2 Mouse / TrackPoint / Trackpad / Trackball support](https://github.com/zmkfirmware/zmk/pull/1751)
+- [Zmk PR #1751: Add PS/2 Mouse / TrackPoint / Trackpad / Trackball support](https://github.com/zmkfirmware/zmk/pull/1751)    
