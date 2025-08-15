@@ -1,0 +1,5 @@
+description: UF2 Bootloader Reset Behavior
+
+compatible: "zmk,behavior-uf2-reset"
+
+include: one_param.yaml
