@@ -74,8 +74,8 @@
                 &kp ESC           &kp F4   &kp G    &kp H    &kp F6           &kp SQT   &kp F5      &kp F13      &kp UP    &kp LALT
             // Row 6: Z, X, C, V, M, Comma, Period, Forward-Slash, Enter, PageLeft, Pause, Shift-R, Ctrl-R
                 &kp Z      &kp X    &kp C    &kp V    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RET        &kp C_AC_BACK &kp PAUSE_BREAK    &kp RSHFT &kp RCTRL
-            // Row 7: , , , B, N, , , Forward-Slash, Space, Arrow-Right, ArrowDown, Page-Right, Arrow-Left, Alt-R, , 
-                &none      &none    &none    &kp B    &kp N    &none     &none    &kp FSLH  &kp SPACE &kp RIGHT &kp DOWN &kp C_AC_FORWARD &kp LEFT &kp RALT   &none &none
+            // Row 7: B, N, Forward-Slash, Space, Arrow-Right, ArrowDown, Page-Right, Arrow-Left, Alt-R
+                            &kp B    &kp N       &kp FSLH &kp SPACE &kp RIGHT &kp DOWN &kp C_AC_FORWARD &kp LEFT &kp RALT
             >;
         };
 
@@ -91,7 +91,7 @@
                 &none      &none    &none    &none    &none    &none     &none    &none     &none    &none        &none       &none
                 &none             &none    &none    &none    &none             &none     &none        &none        &none       &none
                 &none      &none    &none    &none    &none    &none     &none    &none     &none        &none       &none          &none &none
-                &none      &none    &none    &none    &none    &none     &none    &none     &none     &none     &none     &none        &none       &none      &none &none
+                            &none    &none       &none    &none     &none     &none     &none        &none       &none
             >;
         };
 
