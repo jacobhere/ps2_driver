@@ -1,7 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "../dts/behaviors/uf2_reset.dtsi"
 
 #define BASE 0
 #define LOWER 1
@@ -71,8 +70,8 @@
                 &kp TAB    &kp CAPS &kp F3   &kp T    &kp Y    &kp RBKT  &kp F7   &kp LBKT  &kp BSPC   &kp C_VOL_DN            &kp LSHFT
             // Row 4: A, S, D, F, J, K, L, Semi-colon, Back-Slash, Fn, Mute, Menu
                 &kp A      &kp S    &kp D    &kp F    &kp J    &kp K     &kp L    &kp SEMI  &kp BSLH &mo 1        &kp C_MUTE &kp K_CMENU
-            // Row 5: UF2-Reset, F4, G, H, F6, Quote, F5, Think-Vantage, Arrow-Up, Alt-L
-                &uf2_rst          &kp F4   &kp G    &kp H    &kp F6           &kp SQT   &kp F5      &kp F13      &kp UP    &kp LALT
+            // Row 5: Esc, F4, G, H, F6, Quote, F5, Think-Vantage, Arrow-Up, Alt-L
+                &bootloader       &kp F4   &kp G    &kp H    &kp F6           &kp SQT   &kp F5      &kp F13      &kp UP    &kp LALT
             // Row 6: Z, X, C, V, M, Comma, Period, Forward-Slash, Enter, PageLeft, Pause, Shift-R, Ctrl-R
                 &kp Z      &kp X    &kp C    &kp V    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RET        &kp C_AC_BACK &kp PAUSE_BREAK    &kp RSHFT &kp RCTRL
             // Row 7: B, N, Forward-Slash, Space, Arrow-Right, ArrowDown, Page-Right, Arrow-Left, Alt-R

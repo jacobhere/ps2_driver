@@ -1,9 +1,0 @@
-/ {
-    behaviors {
-        uf2_rst: uf2_rst {
-            compatible = "zmk,behavior-uf2-reset";
-            label = "UF2_RESET";
-            #binding-cells = <0>;
-        };
-    };
-};
