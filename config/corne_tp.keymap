@@ -68,8 +68,8 @@
                 &kp Q      &kp W    &kp E    &kp R    &kp U    &kp I     &kp O    &kp P              &kp C_VOL_UP &kp LGUI    &kp SLCK
             // Row 3: Tab, CapsLock, F3, T, Y, Right-Brace, F7, Left-Brace, Back-Space, VolumeDown, Shift-L
                 &kp TAB    &kp CAPS &kp F3   &kp T    &kp Y    &kp RBKT  &kp F7   &kp LBKT  &kp BSPC   &kp C_VOL_DN            &kp LSHFT
-            // Row 4: A, S, D, F, J, K, L, Semi-colon, Back-Slash, Fn, Mute, Menu
-                &kp A      &kp S    &kp D    &kp F    &kp J    &kp K     &kp L    &kp SEMI  &kp BSLH &mo 1        &kp C_MUTE &kp K_CMENU
+            // Row 4: A, S, D, F, J, K, L, Semi-colon, Back-Slash, Mute, Menu
+                &kp A      &kp S    &kp D    &kp F    &kp J    &kp K     &kp L    &kp SEMI  &kp BSLH    &kp C_MUTE &kp K_CMENU
             // Row 5: Esc, F4, G, H, F6, Quote, F5, Think-Vantage, Arrow-Up, Alt-L
                 &bootloader       &kp F4   &kp G    &kp H    &kp F6           &kp SQT   &kp F5      &kp A      &kp UP    &kp LALT
             // Row 6: Z, X, C, V, M, Comma, Period, Forward-Slash, Enter, PageLeft, Pause, Shift-R, Ctrl-R
@@ -77,14 +77,14 @@
             // Row 7: B, N, Forward-Slash, Space, Arrow-Right, ArrowDown, Page-Right, Arrow-Left, Alt-R
                             &kp B    &kp N       &kp FSLH &kp SPACE &kp RIGHT &kp DOWN &kp C_AC_FORWARD &kp LEFT &kp RALT
             // Row 8 (NEW): FN_KEY, POWER_KEY
-                &kp A  &kp B
+                &mo 1  &kp B
             >;
         };
 
         bt_layer { // Layer 1 - Bluetooth and system controls
             bindings = <
             // Row 0: System controls
-                &bootloader &bt BT_CLR &sys_reset &none    &none    &none     &none    &none     &none    &none     &none     &none     &none                &none
+                &bootloader &bt BT_CLR &sys_reset &kp A    &none    &none     &none    &none     &none    &none     &none     &none     &none                &none
             // Row 1: Bluetooth selection
                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none &none &none &none &none &none &none
             // Row 2-7: Pass through or none
