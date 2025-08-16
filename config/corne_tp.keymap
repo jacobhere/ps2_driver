@@ -60,8 +60,8 @@
 
         default_layer { // Layer 0 - Main layer
             bindings = <
-            // Row 0: Back-Tick, F1, F2, 5, 6, Equal, F8, Minus, F9, Insert, Delete, Page-Up, Home, Button A, Ctrl-L
-                &kp GRAVE  &kp F1   &kp F2   &kp N5   &kp N6   &kp EQUAL &kp F8   &kp MINUS &kp F9   &kp INS   &kp DEL   &kp PG_UP &kp HOME &kp A        &kp LCTRL
+            // Row 0: Back-Tick, F1, F2, 5, 6, Equal, F8, Minus, F9, Insert, Delete, Page-Up, Home, , , Ctrl-L
+                &kp GRAVE  &kp F1   &kp F2   &kp N5   &kp N6   &kp EQUAL &kp F8   &kp MINUS &kp F9   &kp INS   &kp DEL   &kp PG_UP &kp HOME               &kp LCTRL
             // Row 1: 1, 2, 3, 4, 7, 8, 9, 0, F10, F12, F11, Page-Down, End, Print-Screen
                 &kp N1     &kp N2   &kp N3   &kp N4   &kp N7   &kp N8    &kp N9   &kp N0    &kp F10  &kp F12   &kp F11   &kp PG_DN &kp END  &kp PSCRN
             // Row 2: Q, W, E, R, U, I, O, P, VolumeUp, GUI, ScrollLock
@@ -76,6 +76,8 @@
                 &kp Z      &kp X    &kp C    &kp V    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RET        &kp C_AC_BACK &kp PAUSE_BREAK    &kp RSHFT &kp RCTRL
             // Row 7: B, N, Forward-Slash, Space, Arrow-Right, ArrowDown, Page-Right, Arrow-Left, Alt-R
                             &kp B    &kp N       &kp FSLH &kp SPACE &kp RIGHT &kp DOWN &kp C_AC_FORWARD &kp LEFT &kp RALT
+            // Row 8 (NEW): FN_KEY, POWER_KEY
+                &kp F13  &kp F14
             >;
         };
 
@@ -92,6 +94,8 @@
                 &none             &none    &none    &none    &none             &none     &none        &none        &none       &none
                 &none      &none    &none    &none    &none    &none     &none    &none     &none        &none       &none          &none &none
                             &none    &none       &none    &none     &none     &none     &none        &none       &none
+            // Row 8 (NEW): placeholders to match RC(8,0) / RC(8,1)
+                &none  &none
             >;
         };
 
@@ -111,7 +115,9 @@
         // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┴────────────────────────┼────────────────────────╯
                                                                                         &mkp MCLK                &mkp LCLK                &mkp RCLK                     &mkp MCLK                &mkp LCLK                &mkp RCLK
         //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
-            >;
+        // Row 8 (NEW)
+            &trans  &trans
+    >;
             };
 
         #endif
@@ -132,6 +138,8 @@
         // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┴────────────────────────┼────────────────────────╯
                                                                                         &mkp MCLK                &mkp LCLK                &mkp RCLK                     &mkp MCLK                &mkp LCLK                &mkp RCLK
         //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
+         // Row 8 (NEW)
+            &trans  &trans
             >;
             };
 
@@ -148,6 +156,8 @@
         // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┴────────────────────────┼────────────────────────╯
                                                                                         &trans                   &mkp LCLK                &mkp RCLK                     &none                    &mkp LCLK                &mkp RCLK
         //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
+           // Row 8 (NEW)
+            &trans  &trans
             >;
             };
 
