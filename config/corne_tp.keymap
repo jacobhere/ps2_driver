@@ -84,7 +84,7 @@
         bt_layer { // Layer 1 - Bluetooth and system controls
             bindings = <
             // Row 0: System controls
-                &none &bt BT_CLR &sys_reset &kp A    &bootloader    &none     &none    &none     &none    &none     &none     &none     &none                &none
+                &none &bt BT_CLR &sys_reset &none    &none    &none     &none    &none     &none    &none     &none     &bootloader     &none                &none
             // Row 1: Bluetooth selection
                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none &none &none &none &none &none &none
             // Row 2-7: Pass through or none
@@ -95,7 +95,7 @@
                 &none      &none    &none    &none    &none    &none     &none    &none     &none        &none       &none          &none &none
                             &none    &none       &none    &none     &none     &none     &none        &none       &none
             // Row 8 (NEW): placeholders to match RC(8,0) / RC(8,1)
-                &none  &bootloader
+                &none  &none
             >;
         };
 
