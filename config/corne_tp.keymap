@@ -79,7 +79,6 @@
             // Row 8: Button A (connected to P0.18)
                                                                                                                                     &kp A
             >;
-            >;
         };
 
         bt_layer { // Layer 1 - Bluetooth and system controls
