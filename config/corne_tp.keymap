@@ -77,7 +77,7 @@
             // Row 7: B, N, Forward-Slash, Space, Arrow-Right, ArrowDown, Page-Right, Arrow-Left, Alt-R
                             &kp B    &kp N       &kp FSLH &kp SPACE &kp RIGHT &kp DOWN &kp C_AC_FORWARD &kp LEFT &kp RALT
             // Row 8 (NEW): FN_KEY, POWER_KEY
-                &kp F13  &kp F14
+                &kp A  &kp B
             >;
         };
 
