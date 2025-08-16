@@ -33,7 +33,7 @@
         direct {
             kscan = <&kscan_direct>;
             row-offset = <8>;
-            col-offset = <0>;
+            column-offset = <0>;
         };
     };
 
