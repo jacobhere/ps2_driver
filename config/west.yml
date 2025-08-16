@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: urob
       url-base: https://github.com/urob
+    - name: jacobhere
+      url-base: https://github.com/jacobhere
 
   projects:
 
