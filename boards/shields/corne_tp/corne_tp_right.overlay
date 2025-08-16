@@ -29,6 +29,7 @@
             , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // DRV13 - P0.26
             , <&gpio0 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV14 - P0.00
             , <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // DRV15 - P0.06
+            , <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // SENSE8 - P0.19 (Button A)
             ;
 
         row-gpios
