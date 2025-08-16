@@ -91,11 +91,11 @@
                 &none      &none    &none    &none    &none    &none     &none    &none              &none        &none       &none
                 &none      &none    &none    &none    &none    &none     &none    &none     &none      &none                   &none
                 &none      &none    &none    &none    &none    &none     &none    &none     &none    &none        &none       &none
-                &bootloader             &none    &none    &none    &none             &none     &none        &none        &none       &none
+                &none             &none    &none    &none    &none             &none     &none        &none        &none       &none
                 &none      &none    &none    &none    &none    &none     &none    &none     &none        &none       &none          &none &none
                             &none    &none       &none    &none     &none     &none     &none        &none       &none
             // Row 8 (NEW): placeholders to match RC(8,0) / RC(8,1)
-                &none  &none
+                &none  &bootloader
             >;
         };
 
