@@ -19,7 +19,6 @@
 
     kscan0: kscan_composite {
         compatible = "zmk,kscan-composite";
-        wakeup-source;
 
         // Keep the same 16 columns; add one more row (new row index = 8)
         rows = <9>;      // was 8
